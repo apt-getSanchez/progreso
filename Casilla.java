@@ -1,21 +1,20 @@
 import java.awt.*;
+import java.applet.*;
 
 public class Casilla extends Rectangle{
-	public static final int DIM = 60;
-	int valor;
-	Color color;
-    public Casilla(int posx, int posy, int v, Color color) {
-		super(posx, posy, DIM, DIM);
-    	valor = v;
-    	this.color = color;
+	public static final int DIM = 100;
+	Color letras[]={Color.black,Color.white};
+	Color fondos[]=;
+	private Image imagen;
+    public Casilla() {
+    
     }
 
-    public void dibujar(Graphics g){
-		g.setColor(Color.black);
-		g.drawRect(x, y, width, height);
-		g.setFont(new Font("TimesRoman", Font.PLAIN, 24));
-		g.setColor(color);
-		g.drawString("" + valor, x+20, y+40);
+    public void dibujar(Graphics g, Applet a){
+		if(descubierta)
+			g.drawImage(imagen, x, y, width, height, a);
+		else
+			g.drawImage(reverso, x, y, width, height, a);
     }
     
 }
